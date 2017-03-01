@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PCD</title>
+
+<link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendors/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet">
+<link href="vendors/novus-nvd3/build/nv.d3.min.css" rel="stylesheet">
+<link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="css/main.css" rel="stylesheet">
+
+</head>
+<body class="nav-md">
+
+<div class="container body">
+    <div class="main_container">
+    
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="#level1_1">Level One</a>
+                                    <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li class="sub_menu"><a href="level2.html">Level Two</a></li>
+                                            <li><a href="#level2_1">Level Two</a></li>
+                                            <li><a href="#level2_2">Level Two</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#level1_2">Level One</a></li>
+                                </ul>
+                            </li>                  
+                        </ul>
+                    </div>
+                </div>
+                <!-- /sidebar menu -->
+            </div>
+        </div>
+        
+        <div class="right_col" role="main">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Intereses de la Audiencia</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_title">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a id="link_tab_audiencia_interes_b100" href="#tab_audiencia_interes_b100" role="tab" data-toggle="tab">Share b=100%</a></li>
+                                <li role="presentation"><a id="link_tab_audiencia_interes" href="#tab_audiencia_interes" role="tab" data-toggle="tab">Share Mercado</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="tab_audiencia_interes_b100">
+                                <div class="col-md-6">
+                                    <table id="audiencia_interes_b100_tabla">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="Variables">Variables</th>
+                                                <th data-field="Musimundo">Musimundo</th>
+                                                <th data-field="Fravega">Fravega</th>
+                                                <th data-field="Garbarino">Garbarino</th>
+                                                <th data-field="Avenida">Avenida</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="audiencia_interes_b100_grafico" class="total_svg">
+                                        <svg></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab_audiencia_interes">
+                                <div class="col-md-6">
+                                    <table id="audiencia_interes_tabla">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="Variables">Variables</th>
+                                                <th data-field="Musimundo">Musimundo</th>
+                                                <th data-field="Fravega">Fravega</th>
+                                                <th data-field="Garbarino">Garbarino</th>
+                                                <th data-field="Avenida">Avenida</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="audiencia_interes_grafico" class="total_svg">
+                                        <svg></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Intereses de la Audiencia por Industria</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_title">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a id="link_tab_audiencia_Arte_Entretenimiento" href="#tab_audiencia_Arte_Entretenimiento" role="tab" data-toggle="tab">Arte y Entretenimiento</a></li>
+                                <li role="presentation"><a id="link_tab_audiencia_Internet_Telcos" href="#tab_audiencia_Internet_Telcos" role="tab" data-toggle="tab">Internet & Telcos</a></li>
+                                <li role="presentation"><a id="link_tab_audiencia_Shoppings" href="#tab_audiencia_Shoppings" role="tab" data-toggle="tab">Shoppings</a></li>
+                                <li role="presentation"><a id="link_tab_audiencia_Noticias_Medios" href="#tab_audiencia_Noticias_Medios" role="tab" data-toggle="tab">Noticias & Medios</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="tab_audiencia_Arte_Entretenimiento">
+                                <div class="col-md-4">
+                                    <table id="audiencia_Arte_Entretenimiento_sites">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="Pos">Pos.</th>
+                                                <th data-field="Sitio">Sitio</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Arte_Entretenimiento_musimundo_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Arte_Entretenimiento_musimundo_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Arte_Entretenimiento_garbarino_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Arte_Entretenimiento_garbarino_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Arte_Entretenimiento_fravega_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Arte_Entretenimiento_fravega_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Arte_Entretenimiento_avenida_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Arte_Entretenimiento_avenida_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab_audiencia_Internet_Telcos">
+                                <div class="col-md-4">
+                                    <table id="audiencia_Internet_Telcos_sites">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="Pos">Pos.</th>
+                                                <th data-field="Sitio">Sitio</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Internet_Telcos_musimundo_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Internet_Telcos_musimundo_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Internet_Telcos_garbarino_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Internet_Telcos_garbarino_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Internet_Telcos_fravega_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Internet_Telcos_fravega_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Internet_Telcos_avenida_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Internet_Telcos_avenida_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab_audiencia_Shoppings">
+                                <div class="col-md-4">
+                                    <table id="audiencia_Shoppings_sites">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="Pos">Pos.</th>
+                                                <th data-field="Sitio">Sitio</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Shoppings_musimundo_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Shoppings_musimundo_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Shoppings_garbarino_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Shoppings_garbarino_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Shoppings_fravega_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Shoppings_fravega_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Shoppings_avenida_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Shoppings_avenida_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab_audiencia_Noticias_Medios">
+                                <div class="col-md-4">
+                                    <table id="audiencia_Noticias_Medios_sites">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="Pos">Pos.</th>
+                                                <th data-field="Sitio">Sitio</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Noticias_Medios_musimundo_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Noticias_Medios_musimundo_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Noticias_Medios_garbarino_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Noticias_Medios_garbarino_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Noticias_Medios_fravega_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Noticias_Medios_fravega_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="audiencia_Noticias_Medios_avenida_tabla">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-field="Empresa">Empresa</th>
+                                                        <th data-field="ShareAudiencia">Share<br />Audiencia</th>
+                                                        <th data-field="Shareb100">Share<br />b=100</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <canvas id="audiencia_Noticias_Medios_avenida_wordcloud" class="wordcloud"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Audiencia Sitios</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <table id="audiencia_sitios_ranking_tabla">
+                                <thead>
+                                    <tr>
+                                        <th data-field="Pos">Pos.</th>
+                                        <th data-field="Musimundo">Musimundo</th>
+                                        <th data-field="Fravega">Fravega</th>
+                                        <th data-field="Garbarino">Garbarino</th>
+                                        <th data-field="Avenida">Avenida</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Audiencia por Industria</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <div id="audiencia_industrias_grafico" class="big_svg">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row top_tiles">
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+                        <div class="count">179</div>
+                        <h3>New Sign ups</h3>
+                        <p>Lorem ipsum psdea itgum rixt.</p>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-comments-o"></i></div>
+                        <div class="count">179</div>
+                        <h3>New Sign ups</h3>
+                        <p>Lorem ipsum psdea itgum rixt.</p>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                        <div class="count">179</div>
+                        <h3>New Sign ups</h3>
+                        <p>Lorem ipsum psdea itgum rixt.</p>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                        <div class="count">179</div>
+                        <h3>New Sign ups</h3>
+                        <p>Lorem ipsum psdea itgum rixt.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- /page content -->
+    </div>
+</div>
+
+<script type="application/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<script type="application/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="vendors/bootstrap-table/dist/bootstrap-table.js"></script>
+<script type="application/javascript" src="vendors/d3/d3.min.js"></script>
+<script type="application/javascript" src="vendors/novus-nvd3/build/nv.d3.min.js"></script>
+<script type="application/javascript" src="vendors/wordcloud2.js/src/wordcloud2.js"></script>
+
+<script type="application/javascript" src="js/main.js"></script>
+
+</body>
+</html>
